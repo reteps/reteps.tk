@@ -9,6 +9,9 @@ $password = 'botkahoot28';
 $loginUrl = 'https://create.kahoot.it/rest/authenticate';
 $kahootId = $_GET['quizid'];
 $type = $_GET['what'];
+if ($type == "bot") {
+  $call = "go/kahootbot " . $kahootId . " " . $_GET['gamepin'] . " " . $_GET['username'] . " "
+}
 $pageUrl = 'https://create.kahoot.it/rest/kahoots/' . $kahootId;
 $loginheader = array(); 
 $loginheader[] = 'content-type: application/json';
@@ -44,6 +47,7 @@ $pairs = array(
 $context = stream_context_create($options);
 $raw_result = file_get_contents($pageUrl, false, $context);
 $result = json_decode($raw_result,true)["questions"];
+
 echo("<a href='kahoot.html'>back</a><br>");
 foreach($result as $value) {
   if ($type == "text") {
@@ -54,12 +58,17 @@ foreach($result as $value) {
     if ($choices[$i]['correct'] == true) {
       if ($type == "text") {
         echo($choices[$i]['answer']."<br>");
+      } elseif ($type == "bot") {
+        $call .= $i         
       } else {
         echo($pairs[$i].", ");
       }
       break 1;
     }
   }
+}
+if ($type == "bot") {
+  exec($call)
 }
 ?>
 </body>

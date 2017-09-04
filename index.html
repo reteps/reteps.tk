@@ -1,12 +1,32 @@
 <!doctype html>
 <html>
   <head>
-    <title>
-  Peter's Site
-    </title>
+    <title>Peter's Site</title>
+    <style>
+.menu, .menu * {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+}
+	</style>
   </head>
   <body>
     <p>Welcome to Peter's Website</p>
-    <a href="kahoot.html">Kahoot bot</a>
+    <nav>
+      <ul class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/">School</a>
+          <ul>
+            <li><a href="school/grade_calculator">Grade Calculator</a></li>
+            <li><a href="school/trinomial_calculator.html">Trinomial Calculator</a></li>
+            <li><a href="school/radical_calculator.html">Radical Calculator</a></li>
+            <li><a href="school/trig_calculator.html">Trig Calculator</a></li>
+            <li><a href="school/kahoot_bot">Kahoot Bot</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </nav>
   </body>
 </html>
