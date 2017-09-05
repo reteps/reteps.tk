@@ -3,35 +3,81 @@
   <head>
     <title>Peter's Site</title>
     <style>
-nav {
-  display:block;
+#rest {
+  background: red;
+  width:100%;
 }
-.menu, .menu * {
-  display: flex;
-  flex-direction:column;
+#menu_wrap ul {
+  list-style: none;
+  position: relative;
   margin: 0;
-    padding: 0;
-    border: none;
-    outline: none;
+  padding: 0;
 }
 
+#menu_wrap ul a {
+  background: #b8b8b8;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  font-size: 30px;
+  line-height: 40px;
+  padding: 0 20px;
+}
+
+#menu_wrap ul li {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+#menu_wrap ul li.current-menu-item {
+  background: #ddd;
+}
+
+#menu_wrap ul li:hover {
+  background: #f6f6f6;
+}
+
+#menu_wrap ul ul {
+  display: none;
+  position: absolute;
+  background: #fff;
+  padding: 0;
+}
+
+#menu_wrap ul ul li {
+  float: none;
+  width: 200px;
+}
+
+#menu_wrap ul ul a {
+  line-height: 120%;
+  padding: 10px 15px;
+}
+
+#menu_wrap ul li:hover > ul {
+  display: block;
+}
 	</style>
   </head>
   <body>
-    <p>Welcome to Peter's Website</p>
-    <nav>
-      <ul class="menu">
+    <nav id="menu_wrap">
+      <ul>
         <li><a href="/">Home</a></li>
         <li><a href="">School</a>
           <ul>
-            <li><a href="school/grade_calculator">Grade Calculator</a></li>
-            <li><a href="school/trinomial_calculator.html">Trinomial Calculator</a></li>
-            <li><a href="school/radical_calculator.html">Radical Calculator</a></li>
-            <li><a href="school/trig_calculator.html">Trig Calculator</a></li>
-            <li><a href="school/kahoot_bot">Kahoot Bot</a></li>
+            <li><a href="/school/grade_calculator">Grade Calculator</a></li>
+            <li><a href="/school/trinomial_calculator">Trinomial Calculator</a></li>
+            <li><a href="/school/radical_calculator">Radical Calculator</a></li>
+            <li><a href="/school/trig_calculator">Trig Calculator</a></li>
+            <li><a href="/school/kahoot_bot">Kahoot Bot</a></li>
           </ul>
         </li>
-
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/other">Other</a></li>
+        <li><a href="https://github.com/reteps">Github</a></li>
+        <li><a href="" id="rest"></a></li>
       </ul>
     </nav>
   </body>
