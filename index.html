@@ -3,9 +3,10 @@
   <head>
     <title>Peter's Site</title>
     <style>
-#rest {
-  background: red;
-  width:100%;
+#menu_wrap {
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
 }
 #menu_wrap ul {
   list-style: none;
@@ -13,7 +14,6 @@
   margin: 0;
   padding: 0;
 }
-
 #menu_wrap ul a {
   background: #b8b8b8;
   display: block;
@@ -31,12 +31,9 @@
   padding: 0;
 }
 
-#menu_wrap ul li.current {
-  background: #ddd;
-}
 
-#menu_wrap ul li:hover {
-  background: rgb(155,100,155);
+#menu_wrap ul li a:hover {
+  background: #9b4b9b;
 }
 
 #menu_wrap ul ul {
@@ -48,7 +45,7 @@
 
 #menu_wrap ul ul li {
   float: none;
-  width: 200px;
+  width: 300px;
 }
 
 #menu_wrap ul ul a {
@@ -57,14 +54,18 @@
 }
 
 #menu_wrap ul li:hover > ul {
+  background: #9b4b9b;
   display: block;
+}
+#current a {
+  background: #27e8e8 !important;
 }
 	</style>
   </head>
   <body>
     <nav id="menu_wrap">
       <ul>
-        <li class="current"><a href="/">Home</a></li>
+        <li id="current"><a href="/">Home</a></li>
         <li><a href="">School</a>
           <ul>
             <li><a href="/school/grade_calculator">Grade Calculator</a></li>
@@ -77,7 +78,6 @@
         <li><a href="/blog">Blog</a></li>
         <li><a href="/other">Other</a></li>
         <li><a href="https://github.com/reteps">Github</a></li>
-        <li><a href="" id="rest"></a></li>
       </ul>
     </nav>
   </body>
