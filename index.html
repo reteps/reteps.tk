@@ -3,12 +3,18 @@
   <head>
     <title>Peter's Site</title>
     <style>
+nav {
+  display:block;
+}
 .menu, .menu * {
-    margin: 0;
+  display: flex;
+  flex-direction:column;
+  margin: 0;
     padding: 0;
     border: none;
     outline: none;
 }
+
 	</style>
   </head>
   <body>
@@ -16,7 +22,7 @@
     <nav>
       <ul class="menu">
         <li><a href="/">Home</a></li>
-        <li><a href="/">School</a>
+        <li><a href="">School</a>
           <ul>
             <li><a href="school/grade_calculator">Grade Calculator</a></li>
             <li><a href="school/trinomial_calculator.html">Trinomial Calculator</a></li>
