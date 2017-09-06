@@ -1,10 +1,11 @@
 <!doctype html>
 <html>
   <head>
+    <link rel="stylesheet" href="menu.css" type="text/css"/>
+    <link rel="icon" href="assets/icon.ico" type="image/x-icon"/>
     <title>
 Trig Calc
     </title>
-    <link rel="stylesheet" type="text/css" href="navbar.css">
     <style>
         .input {
             width: 180px;
@@ -94,8 +95,7 @@ Trig Calc
           return (round(((n1**2) + (n3**2) - (2 * n1 * n3 * Math.cos(rad(n2))))**0.5));
       }
       function asa(n1, n2, n3) {
-          var c = 180 - n1 - n3;
-          return (round((n2 * Math.sin(rad(n1))) / Math.sin(rad(c))));
+          return (round((n2 * Math.sin(rad(n1))) / Math.sin(rad(180 - n1 - n3))));
       }
       function aas(n1, n2, n3) {
           return (round((n3 * Math.sin(rad(n1))) / Math.sin(rad(n2))));
@@ -148,15 +148,6 @@ Trig Calc
     </script>
   </head>
   <body>
-        <!--http://stackoverflow.com/questions/7055024/how-to-store-nav-bar-in-one-file-->
-        <div id='menu'>
-            <a href='index.html'>Home</a>
-            <a href='https://github.com/reteps'>Github</a>
-            <a href='school.html' id='navon'>School Projects</a>
-            <a href='side.html'>Side Projects</a>
-            <a href='blog.html'>Blog</a>
-        </div>
-
     <h3>Trig Calculator</h3>
     <h5>Fill in everything you know, then hit go</h5>
     <p id="ERROROUT"></p>

@@ -1,10 +1,11 @@
 <!doctype html>
 <html>
   <head>
+    <link rel="shortcut icon" href="assets/icon2.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="menu.css" type="text/css"/>
     <title>
 Radical Calculator
     </title>
-    <link rel="stylesheet" type="text/css" href="navbar.css">
     <script>
       function solve() {
         var radical = parseInt(document.getElementById('r').value);
@@ -37,14 +38,6 @@ Radical Calculator
     </script>
   </head>
   <body>
-        <!--http://stackoverflow.com/questions/7055024/how-to-store-nav-bar-in-one-file-->
-        <div id='menu'>
-            <a href='index.html'>Home</a>
-            <a href='https://github.com/reteps'>Github</a>
-            <a href='school.html' id="navon">School Projects</a>
-            <a href='side.html' >Side Projects</a>
-            <a href='blog.html'>Blog</a>
-        </div>
     <h3>Radical Calculator</h3>
     <input id='r' placeholder='radical'><br>
     <button onclick='solve()'>go</button>
