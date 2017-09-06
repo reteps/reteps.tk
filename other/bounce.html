@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+  <head>
+    <title>
+      BounceTEST
+    </title>
+    <style>
+      #CANVAS {
+        background-color:grey;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="navbar.css">
+  </head>
+  <body>
+    <div id='menu'>
+        <a href='index.html'>Home</a>
+        <a href='https://github.com/reteps'>Github</a>
+        <a href='school.html'>School Projects</a>
+        <a href='side.html' id="navon">Side Projects</a>
+        <a href='blog.html'>Blog</a>
+    </div>
+    <button onclick="start()">Animate</button>
+    <br>
+    <canvas id='CANVAS'></canvas>
+    <script>
+      var canvas = document.getElementById('CANVAS');
+      var ctx = canvas.getContext("2d");
+      var x1, x2, y1, y2;
+      var size = 100;
+      var x1v = y1v = 1;
+
+      canvas.height = 500;
+      canvas.width = 650;
+      var rand1 = Math.floor(Math.random() * (canvas.width - size))
+      var rand2 = Math.floor(Math.random() * (canvas.height - size))
+      x1 = rand1
+      y1 = rand2;
+      x2 = size;
+      y2 = size;
+      function start() {
+
+        setInterval(animation, 20);
+      }
+      function animation() {
+        ctx.clearRect(x1,y1,x2,y2);
+
+        if (x1 >= canvas.width - size && x1v == 1 && y1v == -1) { //counter clockwise
+
+          x1v = -1;
+          y1v = -1;
+        } else if (x1 <= 0 && x1v == -1 && y1v == 1) { //counter clockwise
+
+          x1v = 1;
+          y1v = 1;
+        } else if (y1 >= canvas.height - size && x1v == 1 && y1v == 1) { //counter clockwise
+
+          x1v = 1;
+          y1v = -1;
+        } else if (y1 <= 0 && x1v == -1 && y1v == -1) { // counter clockwise
+
+          x1v = -1;
+          y1v = 1;
+        /*BREAK*/
+        } else if (x1 >= canvas.width - size && x1v == 1 && y1v == 1) { //clockwise
+
+          x1v = -1;
+          y1v = 1;
+        } else if (x1 <= 0 && x1v == -1 && y1v == -1) { //clockwise
+
+          x1v = 1;
+          y1v = -1;
+        } else if (y1 >= canvas.height - size && x1v == -1 && y1v == 1) { //clockwise
+
+          x1v = -1;
+          y1v = -1;
+        } else if (y1 <= 0 && x1v == 1 && y1v == -1) { // clockwise
+
+          x1v = 1;
+          y1v = 1;
+        }
+
+
+        x1 += x1v;
+        y1 += y1v;
+        ctx.fillRect(x1,y1,x2,y2);
+      }
+    </script>
+  </body>
+</html>
