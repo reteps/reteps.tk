@@ -32,19 +32,14 @@ table {
     <link rel="stylesheet" type="text/css" href="navbar.css">
     </head>
   <body>
-        <div id='menu'>
-            <a href='index.html'>Home</a>
-            <a href='https://github.com/reteps'>Github</a>
-            <a href='school.html'>School Projects</a>
-            <a href='side.html' >Side Projects</a>
-            <a href='blog.html' id="navon">Blog</a>
-        </div>
-      <p>This is my blog - most recent at top</p>
-      <div id='smenu'>
-        <ul>
-          <li><a href="blog/test.html">test</a></li>
-        </ul>
-    </div>
+<?php
+  $articles = glob("/home/retep/www/reteps.tk/blog/" . "*.html");
+  foreach($articles as $article) {
+
+    $base = basename($article,'.html');
+		echo "<a href=/blog/$base.html>".$base."</a>";
+  }
+?>
   </body>
 </html>
  
