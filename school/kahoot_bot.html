@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 	<head>
-    <link rel="stylesheet" href="menu.css" type="text/css"/>
+    <link rel="stylesheet" href="../menu.css" type="text/css"/>
     <link rel="icon" href="/assets/icon.ico" type="image/x-icon"/>
     <title>
 Peter's Kahoot Bot
@@ -20,7 +20,24 @@ Peter's Kahoot Bot
   change_display()
 	</script>
   	<body>
-		<form action="script.php" method="get">
+    <nav id="menu_wrap">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li class="current"><a href="">School</a>
+          <ul>
+            <li><a href="https://reteps.tk/school/trinomial_calculator">Trinomial Calculator</a></li>
+            <li><a href="https://reteps.tk/school/radical_calculator">Radical Calculator</a></li>
+            <li><a href="https://reteps.tk/school/grades_calculator">Grade Calculator</a></li>
+            <li><a href="https://reteps.tk/school/trig_calculator">Trig Calculator</a></li>
+            <li class="current"><a href="https://reteps.tk/school/kahoot_bot">Kahoot Bot</a></li>
+          </ul>
+        </li>
+        <li><a href="/blog/home">Blog</a></li>
+        <li><a href="/other">Other</a></li>
+        <li><a href="https://github.com/reteps">Github</a></li>
+      </ul>
+    </nav>
+		<form action="schoo/kahoot.php" method="get">
     		<input type="text" name="quizid" style="width:300px;" placeholder="Kahoot id"><br>
         <input type="radio" name="what" value="text" onclick="change_display()">Answers<br>
     		<input type="radio" name="what" value="code" onclick="change_display()">Colors<br>
