@@ -53,6 +53,6 @@
   background: #9b4b9b;
   display: block;
 }
-#current > a {
+.current > a {
   background: #27e8e8 !important;
 }
