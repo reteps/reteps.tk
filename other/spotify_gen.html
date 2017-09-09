@@ -4,6 +4,16 @@
     <title>
 Spotify Account Generator
     </title>
+    <style>
+      input {
+        height:24px;
+        width: 140px;
+      }
+      button {
+        width: 150px;
+        height:24px;
+      }
+    </style>
     <script>
       document.getElementById("go").onclick = generateAccount;
       function generateAccount() {
@@ -14,10 +24,16 @@ Spotify Account Generator
     </script>
   </head>
   <body>
-    <input id="username" placeholder="username"><br>
+    <input id="username" placeholder="username base"><br>
     <input id="password" placeholder="password"><br>
     <input id="account" placeholder="old account username"><br>
-    <button id="go">Go</button>
+    <button id="go">Go</button><br>
+    <ul>
+      <li>password should be correct for old account</li>
+      <li>password will be used for new account</li>
+      <li>username will have the month and year at the end. ex. bob > bob0917</li>
+      <li>email will be username@mailinator.com</li>
+    </ul>
 
   </body>
 </html>
