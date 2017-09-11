@@ -21,8 +21,7 @@
   if (path == "/") {
     document.getElementById("home").style.background = "#0FA3B1";
   } else {
-    var sections = window.location.pathname.split("/");
-    console.log(document);
+    var sections = path.split("/");
     for (var i = 1;i < sections.length;i++) {
       document.getElementById(sections[i].split("_")[0]).style.background = "#0FA3B1";
     }
