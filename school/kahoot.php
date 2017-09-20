@@ -1,8 +1,8 @@
 <html>
-<head>
-</head>
-<body>
-<p id="code"></p>
+  <head>
+    <title>Kahoot bot</title>
+  </head>
+  <body>
 <?php
 $username = 'kahootbot28@gmail.com';
 $password = 'botkahoot28';
@@ -10,7 +10,7 @@ $loginUrl = 'https://create.kahoot.it/rest/authenticate';
 $kahootId = $_GET['quizid'];
 $type = $_GET['what'];
 if ($type == "bot") {
-  $call = "go/kahootbot " . $kahootId . " " . $_GET['gamepin'] . " " . $_GET['username'] . " "
+  $call = "~/www/reteps.tk/go/kahoot-auto " . $_GET['gamepin'] . " " . $_GET['username'] . " ";
 }
 $pageUrl = 'https://create.kahoot.it/rest/kahoots/' . $kahootId;
 $loginheader = array(); 
@@ -59,7 +59,7 @@ foreach($result as $value) {
       if ($type == "text") {
         echo($choices[$i]['answer']."<br>");
       } elseif ($type == "bot") {
-        $call .= $i         
+        $call .= $i;
       } else {
         echo($pairs[$i].", ");
       }
@@ -68,7 +68,7 @@ foreach($result as $value) {
   }
 }
 if ($type == "bot") {
-  exec($call)
+  exec($call);
 }
 ?>
 </body>
