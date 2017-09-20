@@ -17,24 +17,21 @@ Spotify Account Generator
     <script>
       document.getElementById("go").onclick = generateAccount;
       function generateAccount() {
-        var username = document.getElementById("username");
-        var password = document.getElementById("password");
-        var account = document.getElementById("account");
+        var old_username = document.getElementById("old_username");
+        var old_password = document.getElementById("old_password");
+        var new_username_base = document.getElementById("username");
+        var new_password = document.getElementById("password");
       }
     </script>
   </head>
   <body>
     <!--#include virtual="/menu.html" -->
-    <input id="username" placeholder="username base"><br>
-    <input id="password" placeholder="password"><br>
-    <input id="account" placeholder="old account username"><br>
+    <input id="old_username" placeholder="old username"><br>
+    <input id="old_password" placeholder="old password"><br>
+    <input id="username" placeholder="new username base"><br>
+    <input id="password" placeholder="new password"><br>
     <button id="go">Go</button><br>
-    <ul>
-      <li>password should be correct for old account</li>
-      <li>password will be used for new account</li>
-      <li>username will have the month and year at the end. ex. bob > bob0917</li>
-      <li>email will be username@mailinator.com</li>
-    </ul>
+    
 
   </body>
 </html>
