@@ -1,13 +1,14 @@
-#!/usr/bin/env php
+#!/usr/bin/php
 <?php
 $username = 'kahootbot28@gmail.com';
 $password = 'botkahoot28';
 $loginUrl = 'https://create.kahoot.it/rest/authenticate';
-$kahootId = $_GET['quizid'];
-$type = $_GET['what'];
+$kahootId = 'b93cf7ad-eaaa-49ea-a92f-1e5dd680992e';
+$type = 'bot';
 if ($type == "bot") {
-  $call = "~/www/reteps.tk/go/kahoot-auto " . $_GET['gamepin'] . " " . $_GET['username'] . " ";
+  $call = "~/www/reteps.tk/go/kahoot-auto " . '519945' . " " . 'bob' . " ";
 }
+echo($call);
 $pageUrl = 'https://create.kahoot.it/rest/kahoots/' . $kahootId;
 $loginheader = array(); 
 $loginheader[] = 'content-type: application/json';
@@ -44,7 +45,7 @@ $context = stream_context_create($options);
 $raw_result = file_get_contents($pageUrl, false, $context);
 $result = json_decode($raw_result,true)["questions"];
 
-echo("<a href='kahoot.html'>back</a><br>");
+echo("<a href='kahoot_bot'>back</a><br>");
 foreach($result as $value) {
   if ($type == "text") {
     echo($value['question']."  ");
@@ -64,6 +65,19 @@ foreach($result as $value) {
   }
 }
 if ($type == "bot") {
-  exec($call);
+  $old_result = "";
+  $handle = popen($call . " 2>&1", "r");
+  $result = fread($handle, 2096);
+  echo($result);
+  while ((strpos($result, "end") !== false) != true) {
+    $result = fread($handle, 2096);
+    sleep(1); 
+    if ($result != $old_result) {
+      echo($result);
+      $old_result = $result;
+    }
+  }
 }
 ?>
+</body>
+</html>
