@@ -6,7 +6,7 @@ $loginUrl = 'https://create.kahoot.it/rest/authenticate';
 $kahootId = 'b93cf7ad-eaaa-49ea-a92f-1e5dd680992e';
 $type = 'bot';
 if ($type == "bot") {
-  $call = "~/www/reteps.tk/go/kahoot-auto " . '519945' . " " . 'bob' . " ";
+  $call = "~/www/reteps.tk/go/kahoot-auto " . '992114' . " " . 'bob2' . " ";
 }
 $pageUrl = 'https://create.kahoot.it/rest/kahoots/' . $kahootId;
 $loginheader = array(); 
