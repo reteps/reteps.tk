@@ -12,7 +12,6 @@ $type = $_GET['what'];
 if ($type == "bot") {
   $call = "~/www/reteps.tk/go/kahoot-auto " . $_GET['gamepin'] . " " . $_GET['username'] . " ";
 }
-echo($call);
 $pageUrl = 'https://create.kahoot.it/rest/kahoots/' . $kahootId;
 $loginheader = array(); 
 $loginheader[] = 'content-type: application/json';
@@ -81,6 +80,7 @@ if ($type == "bot") {
       $old_result = $result;
     }
   }
+  pclose($handle);
 }
 ?>
 </body>
