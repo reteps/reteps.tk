@@ -9,9 +9,12 @@ $password = 'botkahoot28';
 $loginUrl = 'https://create.kahoot.it/rest/authenticate';
 $kahootId = $_GET['quizid'];
 $type = $_GET['what'];
+ob_implicit_flush(true);
+ob_start();
 if ($type == "bot") {
   $call = "~/www/reteps.tk/go/kahoot-auto " . $_GET['gamepin'] . " " . $_GET['username'] . " ";
   echo($call);
+  ob_flush();
 }
 $pageUrl = 'https://create.kahoot.it/rest/kahoots/' . $kahootId;
 $loginheader = array(); 
@@ -78,6 +81,7 @@ if ($type == "bot") {
     sleep(1); 
     if ($result != $old_result) {
       echo($result);
+      ob_flush();
       $old_result = $result;
     }
   }

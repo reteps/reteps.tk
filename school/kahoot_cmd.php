@@ -1,12 +1,20 @@
-#!/usr/bin/php
+<html>
+  <head>
+    <title>Kahoot bot</title>
+  </head>
+  <body>
 <?php
 $username = 'kahootbot28@gmail.com';
 $password = 'botkahoot28';
 $loginUrl = 'https://create.kahoot.it/rest/authenticate';
-$kahootId = 'b93cf7ad-eaaa-49ea-a92f-1e5dd680992e';
-$type = 'bot';
+$kahootId = $_GET['quizid'];
+$type = $_GET['what'];
+ob_implicit_flush(true);
+ob_start();
 if ($type == "bot") {
-  $call = "~/www/reteps.tk/go/kahoot-auto " . '992114' . " " . 'bob2' . " ";
+  $call = "~/www/reteps.tk/go/kahoot-auto " . $_GET['gamepin'] . " " . $_GET['username'] . " ";
+  echo($call);
+  ob_flush();
 }
 $pageUrl = 'https://create.kahoot.it/rest/kahoots/' . $kahootId;
 $loginheader = array(); 
@@ -45,6 +53,7 @@ $raw_result = file_get_contents($pageUrl, false, $context);
 $result = json_decode($raw_result,true)["questions"];
 
 echo("<a href='kahoot_bot'>back</a><br>");
+ob_flush();
 foreach($result as $value) {
   if ($type == "text") {
     echo($value['question']."  ");
@@ -73,6 +82,7 @@ if ($type == "bot") {
     sleep(1); 
     if ($result != $old_result) {
       echo($result);
+      ob_flush();
       $old_result = $result;
     }
   }
