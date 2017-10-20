@@ -12,6 +12,7 @@ body {
   position: relative;
   margin: 0;
   padding: 0;
+  z-index: -1;
 }
 #menu_wrap ul a {
   color: white;
