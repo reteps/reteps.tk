@@ -38,7 +38,7 @@ Radical Calculator
     </script>
   </head>
   <body>
-    <!--#include virtual="/menu.html" -->
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/menu.php';?>
     <h3>Radical Calculator</h3>
     <input id='r' placeholder='radical'><br>
     <button onclick='solve()'>go</button>

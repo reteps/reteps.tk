@@ -22,9 +22,9 @@ XC times
     </style>
   </head>
   <body>
-    <!--#include virtual="/menu.html" -->
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/menu.php';?>
     <p>please allow for up to <b>30 seconds</b> for it to load.</p>
-    <form action="https://reteps.tk/php/xc_times.php" method="get">
+    <form action="/php/xc_times.php" method="get">
       <input class="input" name="search" type="text" placeholder="name"><br>
       <input class="input" name="school" type="text" placeholder="school (optional)"><br>
       <input class="input" name="state" type="text" placeholder="state abbr.(optional)"><br>

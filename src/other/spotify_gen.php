@@ -25,7 +25,7 @@ Spotify Account Generator
     </script>
   </head>
   <body>
-    <!--#include virtual="/menu.html" -->
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/menu.php';?>
     <input id="old_username" placeholder="old username"><br>
     <input id="old_password" placeholder="old password"><br>
     <input id="username" placeholder="new username base"><br>

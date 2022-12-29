@@ -5,7 +5,7 @@
     <link rel="icon" href="/assets/icon.ico" type="image/x-icon"/>
     <title>Grade Calculator</title>
     <meta charset="utf-8"/>
-    <script type="text/javascript" src="https://reteps.tk/js/gradecalc.js"></script>
+    <script type="text/javascript" src="/js/gradecalc.js"></script>
     <style>
     #fog, #ing {
       width: 300px;
@@ -13,7 +13,7 @@
     </style>
   </head>
   <body>
-    <!--#include virtual="/menu.html" -->
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/menu.php';?>
     <h1>Grade Calculator</h1>
     <input id="ing" placeholder="Informal grades, seperate by commas."><br>
     <input id="fog" placeholder="Formal grades, seperate by commas."><br>

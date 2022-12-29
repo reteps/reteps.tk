@@ -26,7 +26,7 @@
     </script>
   </head>
   <body>
-    <!--#include virtual="/menu.html" -->
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/menu.php';?>
     <input type="number" placeholder="a value" id="a"><br>
     <input type="number" placeholder="b value" id="b"><br>
     <input type="number" placeholder="c value" id="c"><br>

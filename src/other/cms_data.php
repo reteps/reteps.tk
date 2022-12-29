@@ -6,7 +6,7 @@ CMS SQL Databse
     </title>
   </head>
   <body>
-    <!--#include virtual="/menu.html" -->
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/menu.php';?>
 whats up
   </body>
 </html>

@@ -148,7 +148,7 @@ Trig Calc
     </script>
   </head>
   <body>
-    <!--#include virtual="/menu.html" -->
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/menu.php';?>
     <h3>Trig Calculator</h3>
     <h5>Fill in everything you know, then hit go</h5>
     <p id="ERROROUT"></p>

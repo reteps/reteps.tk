@@ -6,6 +6,6 @@
     <title>Peter's Site</title>
   </head>
   <body>
-    <!--#include virtual="/menu.html" -->
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/menu.php';?>
   </body>
 </html>

@@ -19,8 +19,8 @@ Peter's Kahoot Bot
   change_display()
 	</script>
   	<body>
-    <!--#include virtual="/menu.html" -->
-		<form action="https://reteps.tk/php/kahoot_simple.php" method="get">
+    <?php include $_SERVER['DOCUMENT_ROOT'].'/menu.php';?>
+		<form action="/php/kahoot_simple.php" method="get">
     		<input type="text" name="quizid" style="width:300px;" placeholder="Kahoot id"><br>
         <input type="radio" name="what" value="text" onclick="change_display()">Answers<br>
     		<input type="radio" name="what" value="code" onclick="change_display()">Colors<br>
